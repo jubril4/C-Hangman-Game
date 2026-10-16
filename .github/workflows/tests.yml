@@ -1,0 +1,17 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build with warnings as errors
+        run: make hangman
+      - name: Unit tests
+        run: make test
+      - name: Unit tests with AddressSanitizer and UBSan
+        run: make sanitize
