@@ -1,0 +1,6 @@
+hangman
+test_runner
+test_runner_san
+*.tmp
+statistics.txt
+*.o
